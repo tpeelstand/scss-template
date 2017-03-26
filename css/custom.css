@@ -1,0 +1,120 @@
+/* CUSTOM SCSS STYLESHEET */
+/***********************
+    IMPORTED FONTS
+***********************/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/***********************
+    VARIABLES
+***********************/
+/* Gradient to and from colors */
+/***********************
+    MIXINS
+***********************/
+/* Gradient - Green */
+/************************
+    DEFAULTS
+************************/
+body {
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif; }
+
+/* Heading sizes */
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font-size: 30px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 18px; }
+
+/***********************
+    HEADER
+***********************/
+header {
+  width: 100%;
+  background-color: #8aa77a;
+  /* Fallback */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6f8f5d), to(#a6c097));
+  background-image: -webkit-linear-gradient(top, #6f8f5d, #a6c097);
+  background-image: -moz-linear-gradient(top, #6f8f5d, #a6c097);
+  background-image: -ms-linear-gradient(top, #6f8f5d, #a6c097);
+  background-image: -o-linear-gradient(top, #6f8f5d, #a6c097);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#6f8f5d', EndColorStr='#a6c097')";
+  border-bottom: 3px solid #6f8f5d;
+  margin: 0 auto; }
+  header .container {
+    max-width: 800px;
+    margin: 0 auto;
+    /***********************
+        NAVIGATION
+    ***********************/ }
+    header .container .row .logo {
+      width: 42%;
+      float: left; }
+      header .container .row .logo .companyName {
+        display: none; }
+      header .container .row .logo img {
+        width: 100%; }
+    header .container .navigation {
+      width: 58%;
+      margin: 0 auto;
+      float: right;
+      display: block; }
+      header .container .navigation nav {
+        width: 100%; }
+        header .container .navigation nav ul {
+          list-style-type: none;
+          margin: .25em auto 0; }
+          header .container .navigation nav ul li {
+            float: left;
+            margin: 0 .25em;
+            color: #111;
+            font-size: .9em; }
+            header .container .navigation nav ul li::after {
+              content: " /"; }
+            header .container .navigation nav ul li a {
+              color: #111; }
+              header .container .navigation nav ul li a:hover {
+                text-decoration: none; }
+          header .container .navigation nav ul .last::after {
+            content: ""; }
+    header .container .banner {
+      display: none; }
+
+/***********************
+    CONTENT
+***********************/
+main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0; }
+  main .container {
+    max-width: 800px;
+    padding: 0 1em 1em;
+    margin: 0 auto; }
+    main .container .main-content {
+      padding-top: .5em;
+      padding-bottom: .5em; }
+      main .container .main-content p {
+        font-size: .8em; }
+
+/***********************
+    FOOTER
+***********************/
+footer {
+  background: #a6c097; }
+
+/***********************
+    MEDIA QUERIES
+***********************/
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  header .container .banner {
+    display: block;
+    border: 1px solid #333; } }
+
+/*# sourceMappingURL=custom.css.map */

@@ -1,0 +1,201 @@
+/* CUSTOM SCSS STYLESHEET */
+/***********************
+    IMPORTED FONTS
+***********************/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/***********************
+    VARIABLES
+***********************/
+
+/* Gradient to and from colors */
+$from-color: #6f8f5d;
+$to-color: #a6c097;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  'Open Sans', sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+
+$font-family-base:        $font-family-sans-serif !default;
+$font-size-base:          14px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+
+/***********************
+    MIXINS
+***********************/
+/* Gradient - Green */
+@mixin gradient($from-color, $to-color) {
+    background-color: mix($from-color, $to-color); /* Fallback */
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from-color), to($to-color));
+    background-image: -webkit-linear-gradient(top, $from-color, $to-color); 
+    background-image:    -moz-linear-gradient(top, $from-color, $to-color);
+    background-image:     -ms-linear-gradient(top, $from-color, $to-color);
+    background-image:      -o-linear-gradient(top, $from-color, $to-color);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$from-color}', EndColorStr='#{$to-color}')";
+}
+
+/************************
+    DEFAULTS
+************************/
+body {
+    margin: 0 auto;
+    font-family: $font-family-sans-serif;
+    .wrapper {
+
+    }
+}
+/* Heading sizes */
+h1 {font-size: $font-size-h1;}
+h2 {font-size: $font-size-h2;}
+h3 {font-size: $font-size-h3;}
+h4 {font-size: $font-size-h4;}
+
+/***********************
+    HEADER
+***********************/  
+header {
+    width: 100%;
+    @include gradient ($from-color, $to-color);
+    border-bottom: 3px solid $from-color;
+    margin: 0 auto;
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        .row {
+
+            .logo {
+                width: 42%;
+                float: left;
+
+                .companyName {
+                    display: none;   
+                }
+
+                img {
+                  width: 100%;  
+                }
+            }
+        }
+/***********************
+    NAVIGATION
+***********************/
+        .navigation {
+            width: 58%;
+            margin: 0 auto;
+            float: right;
+            display: block;
+
+            nav {
+                width: 100%;
+
+
+                ul {
+                    list-style-type: none;
+                    margin: .25em auto 0;
+
+                    li {
+                        float: left;
+                        margin: 0 .25em;
+                        color: #111;
+                        font-size: .9em;
+
+                                &::after {
+                                    content: " /";   
+                                }
+
+                            a {
+                                color: #111;
+
+                                &:hover {
+                                    text-decoration: none;   
+                                }
+                            }
+                        }
+
+                    .last {
+
+                        &::after {
+                            content: "";   
+                        }
+                    }
+                }
+            }
+        }
+        
+        .banner {
+            display: none;   
+        }
+    }
+}
+
+
+/***********************
+    CONTENT
+***********************/
+main{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    
+        .container {
+            max-width: 800px;
+            padding: 0 1em 1em;
+            margin: 0 auto;
+            
+            
+        .main-content {
+            padding-top: .5em;
+            padding-bottom: .5em;
+
+            p {
+                font-size: .8em;
+            }
+        }
+    }
+}
+.left {
+       
+}
+
+.right {
+    
+}
+
+/***********************
+    FOOTER
+***********************/
+footer {
+    background: $to-color;
+}
+
+/***********************
+    MEDIA QUERIES
+***********************/
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+header {
+        .container {
+            .banner {
+                display: block;
+                border: 1px solid #333;
+            }
+        }
+    }
+}
